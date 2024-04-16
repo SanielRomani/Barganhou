@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barganhou</title>
+    <link rel="stylesheet" href="/style/style.css">
+
+</head>
+<body>
+    <header class="cabecalho"> 
+        <nav class="cabecalho__menu">
+            <img class="cabecalho__imagem" src="/assets/Barganhou.jpg" alt="Logo Barganhou" >
+            <a class="cabecalho__menu_1"   href="index.html">Cupons</a>
+            <a class="cabecalho__menu_1"   href="duvidas.html">Categoria</a>
+            <a class="cabecalho__menu_1"   href="passo_a_passo.html">Lojas</a>
+            <a class="cabecalho__menu_1"   href="passo_a_passo.html">Comunidade</a>
+            <a class="cabecalho__menu_1"   href="passo_a_passo.html">Explicativo</a>
+            <a class="cabecalho__menu_1"   href="cadastro.html">Cadastro</a>
+
+        </nav>
+    </header>
+
+    <main class="apresentacao">
+
+        <section class="apresetacao__conteudo">
+            
+            <h1 class="apresetacao__conteudo__titulo"></h1> 
+
+            <h2 class="fundicao_extracao_1"   href="">Data:</h2>
+
+                <input type="date" class="fundicao_extracao_2" name="data">
+                    <script>
+                        document.getElementById('data').valueAsDate = new Date();
+                    </script>     
+                   
+            <h2 class="fundicao_extracao_1"   href="">Hora:</h2>
+ 
+                <input type="time" class="fundicao_extracao_2" name="hora">
+
+                <script>
+                
+                    var agora = new Date();
+                    var horas = agora.getHours();
+                    var minutos = agora.getMinutes();
+                    if (horas < 10) horas = '0' + horas;
+                    if (minutos < 10) minutos = '0' + minutos;
+                    document.getElementById('hora').value = horas + ':' + minutos;
+                
+                </script>
+                
+                <h2 class="fundicao_extracao_1" href="">Processo:</h2>
+
+                <select id="processo" class="fundicao_extracao_2"  name="processo">
+
+                    <option value="Caster">Caster</option>
+                    <option value="Placa">Placa</option>
+                    <option value="Tarugo">Tarugo</option>
+                    <option value="Fusão">Fusão</option>
+                    <option value="Lingoteira">Lingoteira</option>
+
+                </select> 
+
+                <h2 class="fundicao_extracao_1" href="">Máquina:</h2>
+
+                <select id="detalhes" class="fundicao_extracao_2" name="detalhes">
+     
+                </select> 
+
+     
+                <script>
+     
+                    document.getElementById('processo').addEventListener('change', function() {     
+                        var detalhes = document.getElementById('detalhes');   
+                        detalhes.innerHTML = ''; // Limpa as opções existentes
+  
+                        if (this.value === 'Placa') {
+                            var opcoes = ['Poço 3'];
+                        } else if (this.value === 'Tarugo') {
+                            var opcoes = ['Poço 5', 'Poço 6', 'Poço 7'];
+                        } else if (this.value === 'Fusão') {
+                            var opcoes = ['Fusão 1', 'Fusão 2', 'Fusão 3', 'Fusão 4', 'Fusão 5', 'Fusão 6'];
+                        } else if (this.value === 'Caster') {
+                            var opcoes = ['Caster 1', 'Caster 2', 'Caster 3', 'Caster 4', 'Caster 5', 'Caster 6', 'Caster 7', 'Caster 8', 'Caster 9', 'Caster 10', 'Caster 11', 'Caster 12'];
+                        } else if (this.value === 'Lingoteira') {
+                            var opcoes = ['Lingoteira 1', 'Lingoteira 2'];
+                        } else {
+                            var opcoes = [];
+                        }
+  
+                        for (var i = 0; i < opcoes.length; i++) {
+                            var opcao = document.createElement('option');
+                            opcao.text = opcao.value = opcoes[i];
+                            detalhes.add(opcao);
+                        }
+     
+                    });
+  
+                </script>
+
+                <h2 class="fundicao_extracao_1" href="">Forno:</h2>
+
+                <select id="fornos" class="fundicao_extracao_2" name="fornos">
+                </select>
+
+                <script>
+                    document.getElementById('detalhes').addEventListener('change', function() {
+                        var fornos = document.getElementById('fornos');
+                        fornos.innerHTML = ''; // Limpa as opções existentes
+                        var opcoes = [];
+                        switch (this.value) {
+                            case 'Poço 3':
+                            opcoes = ['FB 36.1'];
+                            break;
+                            case 'Poço 5':
+                            opcoes = ['FB 50.1'];
+                            break;
+                            case 'Poço 6':
+                            opcoes = ['FB 70.1'];
+                            break;
+                            case 'Poço 7':
+                            opcoes = ['FB 36.1', 'FB 36.2'];
+                            break;
+                            case 'Fusão 1':
+                            opcoes = ['FC 42.1'];
+                            break;
+                            case 'Fusão 2':
+                            opcoes = ['FC 42.2'];
+                            break;
+                            case 'Fusão 3':
+                            opcoes = ['FC 42.3'];
+                            break;
+                            case 'Fusão 4':
+                            opcoes = ['FC 42.4'];
+                            break;
+                            case 'Fusão 5':
+                            opcoes = ['FB 80.1'];
+                            break;
+                            case 'Fusão 6':
+                            opcoes = ['FB 80.2'];
+                            break;
+                            case 'Caster 1':
+                            opcoes = ['FB 20.2', 'FB 20.3'];
+                            break;
+                            default:
+                            opcoes = [];
+                            break;
+
+                        }
+      
+                        for (var i = 0; i < opcoes.length; i++) {
+                            var opcao = document.createElement('option');
+                            opcao.text = opcao.value = opcoes[i];
+                            fornos.add(opcao);
+                        }
+                    });
+
+                </script>
+
+                <h2 class="fundicao_extracao_1"   href="">Prioridade:</h2>
+        
+                <form class="fundicao_extracao_2">
+                    <input type="radio" id="fundicao_radio" name="opcao" value="opcao1">
+                    <label for="opcao1">Altissimo</label><br>
+                    <input type="radio" id="fundicao_radio" name="opcao" value="opcao1">
+                    <label for="opcao1">Alto</label><br>
+                    <input type="radio" id="fundicao_radio" name="opcao" value="opcao2">
+                    <label for="opcao2">Média</label><br>
+                    <input type="radio" id="fundicao_radio" name="opcao" value="opcao3">
+                    <label for="opcao3">Baixa</label>
+
+                </form>
+            
+                <h2 class="fundicao_extracao_1"   href="">Comentarios:</h2>
+
+                <input class="fundicao_extracao_2" type="text">
+
+                <button class="apresentacao__links__2"  onclick="confirmacao()" href="">Salvar</button>
+
+                <script class="fundicao_extracao_2">
+                    function confirmacao() {
+                        if (confirm("Você tem certeza?")) {
+                            // Ação a ser realizada se o usuário clicar em "OK"
+                            alert("Você clicou em 'OK'");
+                        } else {
+                            // Ação a ser realizada se o usuário clicar em "Cancelar"
+                            alert("Você clicou em 'Cancelar'");
+                        }
+                    }
+
+                </script>
+      
+            </section> 
+
+
+        </main>
+    
+
+
+        <footer class="rodape">
+        
+            <p>Desenvolvido por Saniel. tel (15) 99757-1809 email: sanielc.romani@gmail.com</p>
+    
+
+        </footer>
+
+    </body>
+
+    </html>

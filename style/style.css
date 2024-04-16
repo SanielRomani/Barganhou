@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --cor-primaria: white;
+    --cor-secundaria: #113744;
+    --cor-tercearia: black;
+    --cor-quaternaria: blue;
+    --cor-fonte: white;
+
+    --fonte-primaria: 'Montserrat', sans-serif;
+    --fonte-secundaria: 'Krona One', sans-serif;
+}
+
+
+
+/*  Pagina Inicial *********Index********** */
+
+
+*{
+margin: 0;
+padding: 0;
+}
+
+body {
+    /* height: 100vh; */
+    background-color: var(--cor-primaria);
+    box-sizing: border-box;
+
+   }
+   
+
+.cabecalho {
+    padding: 1% 0% 0% 0%;
+    justify-content: center;
+}
+
+.cabecalho__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.cabecalho__imagem {
+    width: 15%;
+}
+
+
+.cabecalho__menu_1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-tercearia);
+    margin: 0 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-family: var(--fonte-primaria)
+}
+
+.cabecalho__menu_1:hover {
+    color: var(--cor-quaternaria);
+    border: 2px solid var(--cor-quaternaria);
+}
+
+
+.apresentacao {
+    padding: 2% 20%;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 20px;
+   
+}
+
+.apresetacao__conteudo { 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.apresetacao__conteudo__titulo {
+    color: var(--cor-secundaria);
+    border: 1px solid var(--cor-secundaria);
+    font-weight: bold;
+    font-size: 2.8rem;
+    font-family: var(--fonte-secundaria)
+}
+
+.apresentacao__conteudo__texto {
+    color: white;
+    font-weight: bold;
+    font-size: 1.56rem;
+    font-family: var(--fonte-primaria)
+}
+
+.apresentacao__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    font-family: var(--fonte-primaria);
+    font-weight: bold;
+
+}
+
+.apresentacao__links__1 {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    background-color: var(--cor-secundaria);
+    width: 35%;
+    text-align: center;
+    border-radius: 16px;
+    font-size: 22px;
+    padding: 2% 5% 2% 2%;
+    color:black;
+    font-family: var(--fonte-primaria);
+    border: 2px solid var(--cor-secundaria);
+    top: 50%;
+    left: 50%;
+    font-weight: bold;
+    text-decoration: none;
+
+
+}
+
+.apresentacao__links__1:hover{
+    background-color: var(--cor-quaternaria);
+    border: 2px solid var(--cor-quaternaria);
+}
+
+
+/*  Pagina Solicitação de Metal *********Fundição********** */
+
+.data {
+    font-weight: bold;
+    color: var(--cor-fonte);
+    font-size: 22px;
+}
+
+.apresentacao__links__2 {
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    gap: 16px;
+    background-color: var(--cor-secundaria);
+    width: 30%;
+    text-align: center;
+    border-radius: 16px;
+    font-size: 22px;
+    padding: 2% 10% 2% 10%;
+    color: var(--cor-fonte);
+    font-family: var(--fonte-primaria);
+    border: 2px solid var(--cor-secundaria);
+    top: 50%;
+    left: 50%;
+    font-weight: bold;
+    margin: 2% 10% 2% 20%;
+    text-decoration: none;
+    align-self: center;
+
+
+}
+
+.fundicao_radio {
+    font-family: var(--fonte-primaria);
+    font-weight: bold;
+    color: pink;
+
+}
+
+
+
+.rodape {
+    color: var(--cor-fonte);
+    background-color: var(--cor-secundaria);
+    text-align: center;
+    font-family: var(--fonte-primaria);
+    padding: 28px;
+}
+
+@media (max-width: 1200px) {
+    .cabecalho {
+        padding: 6%;
+    }
+    .cabecalho__menu {
+        justify-content: center;
+    }
+    .apresentacao {
+        flex-direction: column;
+        padding: 2% 5%;
+    }
+    .apresetacao__conteudo {
+        width: auto;
+    }
+    .apresentacao__links__1 {
+        font-size: auto;
+    }
+
+    .cabecalho__menu {
+        padding: auto;
+    }
+}
+
+
+.fundicao_extracao_1 {
+    text-decoration: none;
+    font-family: var(--fonte-primaria);
+}
+
+
+.fundicao_extracao_2 {
+    gap: 0;
+    font-size: 25px;
+    font-family: var(--fonte-primaria);
+    font-weight: bold;
+    align-items: center;
+    margin: 0% 25% 1% 1%;
+}
+
+
